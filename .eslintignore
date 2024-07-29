@@ -1,0 +1,7 @@
+.next/**
+.github/**
+.idea/**
+node_modules/**
+public/**
+next.config.js
+tailwind.config.ts
