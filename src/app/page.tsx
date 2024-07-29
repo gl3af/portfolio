@@ -1,6 +1,7 @@
 import { About } from "@/widgets/about";
 import { Experience } from "@/widgets/experience";
 import { Hero } from "@/widgets/hero";
+import { Skills } from "@/widgets/skills";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Skills />
     </main>
   );
 }
