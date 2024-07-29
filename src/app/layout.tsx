@@ -1,8 +1,11 @@
 import { Unbounded, Montserrat } from "next/font/google";
 
 import { ThemeProvider } from "@/providers";
+import { Header } from "@/widgets/header";
+import { Footer } from "@/widgets/footer";
 
 import type { Metadata } from "next";
+
 import "./globals.css";
 
 const unbounded = Unbounded({
@@ -29,7 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${unbounded.variable} ${montserrat.variable}`}>
+    <html
+      lang="ru"
+      className={`${unbounded.variable} ${montserrat.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <ThemeProvider
           attribute="class"
@@ -37,7 +44,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="container grid min-h-screen grid-rows-[auto_1fr_auto] pt-4">
+            <Header />
+            <main className="flex flex-col gap-4 py-5 md:gap-8 lg:gap-10">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
