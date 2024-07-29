@@ -1,6 +1,6 @@
 import { BriefcaseBusiness } from "lucide-react";
 
-import { Section, Text, Timeline } from "@/shared/ui";
+import { Box, Section, Text, Timeline } from "@/shared/ui";
 
 import { getTotalWorkTime } from "../model";
 import { experience } from "../lib";
@@ -15,7 +15,7 @@ export function Experience() {
       id="work-experience"
       icon={<BriefcaseBusiness strokeWidth={2.5} />}
     >
-      <div className="space-y-2 md:space-y-3">
+      <Box className="space-y-2 md:space-y-3">
         <Text className="text-muted-foreground">{totalWorkTime}</Text>
         <Text>
           Моя коммерческая разработка началась в середине 2022 года. За это время я успел поработать
@@ -23,10 +23,16 @@ export function Experience() {
         </Text>
         <Timeline position="alternate">
           {experience.map(({ company, description, start, end }) => (
-            <ExperienceCard company={company} description={description} start={start} end={end} />
+            <ExperienceCard
+              company={company}
+              description={description}
+              start={start}
+              end={end}
+              key={company}
+            />
           ))}
         </Timeline>
-      </div>
+      </Box>
     </Section>
   );
 }

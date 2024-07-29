@@ -1,4 +1,4 @@
-import { Badge, SmallTitle } from "@/shared/ui";
+import { Badge, Box, SmallTitle } from "@/shared/ui";
 
 import type { SkillGroup } from "../lib";
 
@@ -6,15 +6,15 @@ type GroupProps = SkillGroup;
 
 export function Group({ name, skills, variant }: GroupProps) {
   return (
-    <div className="space-y-2">
+    <Box className="space-y-2">
       <SmallTitle>{name}</SmallTitle>
-      <ul className="flex flex-wrap gap-2 md:gap-3">
+      <Box as="ul" className="flex flex-wrap gap-2 md:gap-3">
         {skills.map((skill) => (
-          <li>
+          <Box as="li" key={skill}>
             <Badge variant={variant}>{skill}</Badge>
-          </li>
+          </Box>
         ))}
-      </ul>
-    </div>
+      </Box>
+    </Box>
   );
 }

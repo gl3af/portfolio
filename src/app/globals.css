@@ -83,6 +83,10 @@
     @apply transition-all ease-in;
   }
 
+  .main-border {
+    @apply border-primary border-2;
+  }
+
   html {
     scroll-behavior: smooth;
   }

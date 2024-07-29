@@ -2,6 +2,7 @@ import { Map } from "lucide-react";
 import Link from "next/link";
 
 import {
+  Box,
   Button,
   DropdownMenu,
   DropdownMenuContent,
@@ -17,7 +18,9 @@ export function Navigation() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <Map className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Навигация по сайту</span>
+          <Box as="span" className="sr-only">
+            Навигация по сайту
+          </Box>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

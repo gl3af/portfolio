@@ -1,15 +1,15 @@
 import Image from "next/image";
 
-import { Text, Title } from "@/shared/ui";
+import { Box, Text, Title } from "@/shared/ui";
 
 export function Hero() {
   return (
-    <div className="flex items-center justify-center">
-      <div className="grid place-items-center gap-4 md:grid-cols-[1fr_3fr] md:gap-8">
-        <div className="border-primary relative aspect-square w-full max-w-xs overflow-hidden rounded-lg border-2 md:max-w-md md:-rotate-2">
+    <Box className="flex items-center justify-center">
+      <Box className="grid place-items-center gap-4 md:grid-cols-[1fr_3fr] md:gap-8">
+        <Box className="main-border relative aspect-square w-full max-w-xs overflow-hidden rounded-lg md:max-w-md md:-rotate-2">
           <Image src="/me.webp" alt="Никита Баранов" fill priority />
-        </div>
-        <div className="border-primary bg-background space-y-3 rounded-lg border p-4">
+        </Box>
+        <Box className="main-border bg-background space-y-3 rounded-lg p-4">
           <Title className="text-center md:text-left">Никита Баранов</Title>
           <Text>
             Меня зовут Никита, и я фронтенд-разработчик,
@@ -17,8 +17,8 @@ export function Hero() {
             качественные, красивые и эффективные веб-приложения с использованием современных
             подходов и технологий веб-разработки
           </Text>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
