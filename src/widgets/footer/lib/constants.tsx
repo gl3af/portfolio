@@ -34,8 +34,8 @@ export const socials: Social[] = [
 
 export const stackData = [
   {
-    name: "Astro",
-    href: "https://astro.build",
+    name: "Next.js",
+    href: "https://nextjs.org",
   },
   {
     name: "Tailwind",
