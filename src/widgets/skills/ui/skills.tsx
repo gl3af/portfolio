@@ -10,7 +10,7 @@ export function Skills() {
     <Section title="Навыки" id="skills" icon={<Rocket strokeWidth={2.5} />}>
       <Box className="space-y-2 md:space-y-4">
         {skillGroups.map(({ name, skills, variant }) => (
-          <Group name={name} skills={skills} variant={variant} />
+          <Group name={name} skills={skills} variant={variant} key={name} />
         ))}
       </Box>
     </Section>
