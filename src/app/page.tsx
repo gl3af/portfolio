@@ -1,3 +1,9 @@
+import { Hero } from "@/widgets/hero";
+
 export default function Home() {
-  return <main>Start</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }
