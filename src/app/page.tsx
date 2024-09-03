@@ -4,6 +4,8 @@ import { Experience } from "@/widgets/experience";
 import { Hero } from "@/widgets/hero";
 import { Skills } from "@/widgets/skills";
 
+export const revalidate = 10 * 24 * 60 * 60; // 10 Days
+
 export default function Home() {
   return (
     <Box as="main" className="flex flex-col gap-4 py-5 md:gap-8 lg:gap-10">
