@@ -1,7 +1,6 @@
+import { Experience } from "@prisma/client";
 import { differenceInCalendarMonths, format } from "date-fns";
 import { ru } from "date-fns/locale";
-
-import { experience, type Experience } from "../lib";
 
 export const getDeclination = (value: number, declination: string[]): string => {
   const cases = [2, 0, 1, 1, 1, 2];
@@ -42,12 +41,12 @@ export const getWorkTime = (start: Date, end?: Date): string => {
   return formatWorkTime(years, actualMonths);
 };
 
-export const getTotalWorkTime = (): string => {
+export const getTotalWorkTime = (experiences: Experience[]): string => {
   let prevInterval: Pick<Experience, "start" | "end"> | null = null;
 
-  const months = experience
+  const months = experiences
     .map(({ start, end }) => {
-      const currentMonths = getMonthsDifference(start, end);
+      const currentMonths = getMonthsDifference(start, end ?? undefined);
 
       if (!prevInterval) {
         prevInterval = { start, end };

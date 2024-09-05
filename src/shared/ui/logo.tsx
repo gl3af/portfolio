@@ -1,7 +1,12 @@
+import Link from "next/link";
+
 export function Logo() {
   return (
-    <span className="main-transition has-hover:hover:rotate-180 font-title text-2xl tracking-tighter text-primary duration-500 ease-out">
+    <Link
+      href="/"
+      className="main-transition font-title text-2xl tracking-tighter text-primary duration-500 ease-out has-hover:hover:rotate-180"
+    >
       NB
-    </span>
+    </Link>
   );
 }

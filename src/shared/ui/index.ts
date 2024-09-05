@@ -7,3 +7,5 @@ export * from "./telegram";
 export * from "./section";
 export * from "./timeline";
 export * from "./box";
+export * from "./input";
+export * from "./text-area";

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Box, Button, Text, Title } from "@/shared/ui";
 
@@ -22,9 +21,9 @@ export function Hero() {
             asChild
             className="has-hover:hover:-rotate-2 has-hover:hover:-translate-y-1 rounded-full text-base transition-all active:-translate-y-1"
           >
-            <Link href="/CV.pdf" target="_blank">
+            <a href="/CV.pdf" target="_blank">
               Резюме
-            </Link>
+            </a>
           </Button>
         </Box>
       </Box>

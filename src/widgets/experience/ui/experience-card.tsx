@@ -1,3 +1,5 @@
+import { Experience } from "@prisma/client";
+
 import {
   SmallTitle,
   TimelineConnector,
@@ -10,11 +12,15 @@ import {
 } from "@/shared/ui";
 
 import { formatDate, getWorkTime } from "../model";
-import { Experience } from "../lib";
 
 type ExperienceCardProps = Experience;
 
-export function ExperienceCard({ company, description, start, end }: ExperienceCardProps) {
+export function ExperienceCard({
+  companyDescription,
+  companyName,
+  start,
+  end,
+}: ExperienceCardProps) {
   return (
     <TimelineItem>
       <TimelineSeparator>
@@ -23,11 +29,11 @@ export function ExperienceCard({ company, description, start, end }: ExperienceC
       </TimelineSeparator>
       <TimelineContent>
         <Box className="main-transition hover:main-border space-y-1 rounded-lg border-2 p-3">
-          <SmallTitle>{company}</SmallTitle>
-          <Text>{description}</Text>
+          <SmallTitle>{companyName}</SmallTitle>
+          <Text>{companyDescription}</Text>
           <Text className="text-muted-foreground">
-            {formatDate(start)} &#8212; {formatDate(end) ?? "по\xa0настоящее\xa0время"} (
-            {getWorkTime(start, end)})
+            {formatDate(start)} &#8212; {formatDate(end ?? undefined) ?? "по\xa0настоящее\xa0время"}{" "}
+            ({getWorkTime(start, end ?? undefined)})
           </Text>
         </Box>
       </TimelineContent>
