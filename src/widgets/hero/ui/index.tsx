@@ -19,9 +19,13 @@ export function Hero() {
           </Text>
           <Button
             asChild
-            className="has-hover:hover:-rotate-2 has-hover:hover:-translate-y-1 rounded-full text-base transition-all active:-translate-y-1"
+            className="rounded-full text-base transition-all active:-translate-y-1 has-hover:hover:-translate-y-1 has-hover:hover:-rotate-2"
           >
-            <a href="/CV.pdf" target="_blank">
+            <a
+              href="https://drive.google.com/file/d/1zhpk8mv5NTSnO8ttroQINfDLu45HJCnC/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
               Резюме
             </a>
           </Button>
