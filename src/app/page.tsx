@@ -4,7 +4,7 @@ import { Experience } from "@/widgets/experience";
 import { Hero } from "@/widgets/hero";
 import { Skills } from "@/widgets/skills";
 
-export const revalidate = 10 * 24 * 60 * 60; // 10 Days
+export const revalidate = 0;
 
 export default function Home() {
   return (
